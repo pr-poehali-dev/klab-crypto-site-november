@@ -9,13 +9,13 @@ interface HeroProps {
 
 const Hero = ({ klabAmount, balance }: HeroProps) => {
   const [chartData, setChartData] = useState<any[]>([]);
-  const [currentPrice, setCurrentPrice] = useState(2.45);
+  const [currentPrice, setCurrentPrice] = useState(1000);
 
   useEffect(() => {
     const data = [];
-    let price = 2.0;
+    let price = 950;
     for (let i = 0; i < 30; i++) {
-      price += (Math.random() - 0.48) * 0.2;
+      price += (Math.random() - 0.48) * 25;
       data.push({
         time: `${i}д`,
         price: parseFloat(price.toFixed(2)),
@@ -25,7 +25,7 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
     setCurrentPrice(data[data.length - 1].price);
   }, []);
 
-  const priceChange = ((currentPrice - 2.0) / 2.0 * 100).toFixed(2);
+  const priceChange = ((currentPrice - 950) / 950 * 100).toFixed(2);
   const isPositive = parseFloat(priceChange) > 0;
 
   return (
@@ -46,7 +46,7 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
             <span className="text-3xl">💰</span>
           </div>
           <div className="space-y-2">
-            <p className="text-4xl font-bold text-primary">${currentPrice}</p>
+            <p className="text-4xl font-bold text-primary">${currentPrice.toLocaleString()}</p>
             <p className={`text-sm ${isPositive ? 'text-secondary' : 'text-destructive'}`}>
               {isPositive ? '↑' : '↓'} {Math.abs(parseFloat(priceChange))}% за 30 дней
             </p>
@@ -61,7 +61,7 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
           <div className="space-y-2">
             <p className="text-4xl font-bold text-secondary">{klabAmount}</p>
             <p className="text-sm text-muted-foreground">
-              ≈ ${(klabAmount * currentPrice).toFixed(2)} USD
+              ≈ ${(klabAmount * currentPrice).toLocaleString()} USD
             </p>
           </div>
         </Card>
@@ -72,7 +72,7 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
             <span className="text-3xl">💵</span>
           </div>
           <div className="space-y-2">
-            <p className="text-4xl font-bold text-accent">${balance}</p>
+            <p className="text-4xl font-bold text-accent">${balance.toLocaleString()}</p>
             <p className="text-sm text-muted-foreground">
               Доступно для покупки
             </p>

@@ -18,7 +18,7 @@ interface TradingProps {
 const Trading = ({ balance, klabAmount, setBalance, setKlabAmount, addTransaction }: TradingProps) => {
   const [buyAmount, setBuyAmount] = useState('');
   const [sellAmount, setSellAmount] = useState('');
-  const currentPrice = 2.45;
+  const currentPrice = 1000;
 
   const handleBuy = () => {
     const amount = parseFloat(buyAmount);
@@ -78,7 +78,7 @@ const Trading = ({ balance, klabAmount, setBalance, setKlabAmount, addTransactio
       <Card className="p-6 bg-gradient-to-br from-primary/5 to-card border-primary/20">
         <div className="text-center space-y-2">
           <p className="text-sm text-muted-foreground">Текущая цена</p>
-          <p className="text-5xl font-bold text-primary">${currentPrice}</p>
+          <p className="text-5xl font-bold text-primary">${currentPrice.toLocaleString()}</p>
           <p className="text-sm text-secondary">↑ +5.2% за 24ч</p>
         </div>
       </Card>

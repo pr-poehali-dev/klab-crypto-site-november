@@ -1,0 +1,37 @@
+{
+  "tests": [
+    {
+      "name": "Get user transactions",
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "transactions": []
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create transaction",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "type": "buy",
+        "amount": 10,
+        "price": 1000
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "transaction": {
+          "type": "string"
+        }
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
