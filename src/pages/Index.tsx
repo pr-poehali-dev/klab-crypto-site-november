@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import Snowfall from '@/components/Snowfall';
-import Garland from '@/components/Garland';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Wallet from '@/components/Wallet';
@@ -36,19 +34,11 @@ const Index = () => {
   };
 
   if (!isAuthenticated) {
-    return (
-      <>
-        <Snowfall />
-        <Garland />
-        <Auth onLogin={handleLogin} />
-      </>
-    );
+    return <Auth onLogin={handleLogin} />;
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0e1a] via-[#1A1F2C] to-[#0a0e1a]">
-      <Snowfall />
-      <Garland />
       <Header 
         currentPage={currentPage} 
         setCurrentPage={setCurrentPage}

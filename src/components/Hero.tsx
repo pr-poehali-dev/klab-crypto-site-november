@@ -32,10 +32,10 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
     <div className="space-y-6 animate-fade-in">
       <div className="text-center space-y-4 py-8">
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-scale-in">
-          🎅 KLAB TOKEN 🎄
+          💎 KLAB TOKEN
         </h1>
         <p className="text-xl text-muted-foreground">
-          Новогодняя криптовалюта для всех! ❄️
+          Цифровая валюта будущего
         </p>
       </div>
 
@@ -56,7 +56,7 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
         <Card className="p-6 bg-gradient-to-br from-card to-card/50 border-secondary/30 hover-scale">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-muted-foreground">Мои KLAB</h3>
-            <span className="text-3xl">🎁</span>
+            <span className="text-3xl">💎</span>
           </div>
           <div className="space-y-2">
             <p className="text-4xl font-bold text-secondary">{klabAmount}</p>

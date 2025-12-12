@@ -17,11 +17,11 @@ const Header = ({ currentPage, setCurrentPage, onLogout }: HeaderProps) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-primary/20 mt-12">
+    <header className="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="text-3xl">🎄</div>
+            <div className="text-3xl">💎</div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
               KLAB
             </h1>

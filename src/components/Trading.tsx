@@ -230,9 +230,9 @@ const Trading = ({ balance, klabAmount, setBalance, setKlabAmount, addTransactio
 
       <Card className="p-6 bg-gradient-to-br from-accent/10 to-card border-accent/30">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">🎁</span>
+          <span className="text-3xl">💎</span>
           <div>
-            <h3 className="text-lg font-bold">Новогодняя акция!</h3>
+            <h3 className="text-lg font-bold">Специальное предложение!</h3>
             <p className="text-sm text-muted-foreground">Бонус +10% при покупке от 100 KLAB</p>
           </div>
         </div>

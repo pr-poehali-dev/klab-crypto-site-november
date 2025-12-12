@@ -20,18 +20,18 @@ const Auth = ({ onLogin }: AuthProps) => {
       return;
     }
     onLogin(username, password);
-    toast.success('Добро пожаловать! 🎄');
+    toast.success('Добро пожаловать!');
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-[#0a0e1a] via-[#1A1F2C] to-[#0a0e1a]">
       <Card className="w-full max-w-md p-8 bg-card/95 backdrop-blur-md border-primary/30 glow-gold animate-scale-in">
         <div className="text-center mb-8">
-          <div className="text-6xl mb-4">🎄</div>
+          <div className="text-6xl mb-4">💎</div>
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
             KLAB TOKEN
           </h1>
-          <p className="text-muted-foreground">Новогодняя криптовалюта</p>
+          <p className="text-muted-foreground">Цифровая валюта будущего</p>
         </div>
 
         <div className="space-y-4">
@@ -66,7 +66,7 @@ const Auth = ({ onLogin }: AuthProps) => {
           </Button>
 
           <div className="text-center text-sm text-muted-foreground">
-            <p>🎅 Для демо используйте любые данные</p>
+            <p>Для демо используйте любые данные</p>
           </div>
         </div>
 

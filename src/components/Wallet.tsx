@@ -55,13 +55,13 @@ const Wallet = ({ balance, klabAmount, setBalance, setKlabAmount, addTransaction
     setBalance(newBalanceNum);
     setKlabAmount(newKlabNum);
     setEditMode(false);
-    toast.success('Балансы обновлены! 🎉');
+    toast.success('Балансы обновлены!');
   };
 
   return (
     <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
       <div className="text-center">
-        <h2 className="text-4xl font-bold mb-2">🎁 Мой кошелек</h2>
+        <h2 className="text-4xl font-bold mb-2">💼 Мой кошелек</h2>
         <p className="text-muted-foreground">Управляйте своими активами KLAB</p>
       </div>
 
@@ -69,7 +69,7 @@ const Wallet = ({ balance, klabAmount, setBalance, setKlabAmount, addTransaction
         <Card className="p-6 bg-gradient-to-br from-primary/10 to-card border-primary/30 glow-gold">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold">Баланс KLAB</h3>
-            <span className="text-3xl">🪙</span>
+            <span className="text-3xl">💎</span>
           </div>
           {editMode ? (
             <Input
