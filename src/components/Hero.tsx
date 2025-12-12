@@ -9,13 +9,13 @@ interface HeroProps {
 
 const Hero = ({ klabAmount, balance }: HeroProps) => {
   const [chartData, setChartData] = useState<any[]>([]);
-  const [currentPrice, setCurrentPrice] = useState(1000);
+  const [currentPrice, setCurrentPrice] = useState(7500);
 
   useEffect(() => {
     const data = [];
-    let price = 950;
+    let price = 7100;
     for (let i = 0; i < 30; i++) {
-      price += (Math.random() - 0.48) * 25;
+      price += (Math.random() - 0.48) * 180;
       data.push({
         time: `${i}д`,
         price: parseFloat(price.toFixed(2)),
@@ -25,7 +25,7 @@ const Hero = ({ klabAmount, balance }: HeroProps) => {
     setCurrentPrice(data[data.length - 1].price);
   }, []);
 
-  const priceChange = ((currentPrice - 950) / 950 * 100).toFixed(2);
+  const priceChange = ((currentPrice - 7100) / 7100 * 100).toFixed(2);
   const isPositive = parseFloat(priceChange) > 0;
 
   return (

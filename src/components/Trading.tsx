@@ -18,7 +18,7 @@ interface TradingProps {
 const Trading = ({ balance, klabAmount, setBalance, setKlabAmount, addTransaction }: TradingProps) => {
   const [buyAmount, setBuyAmount] = useState('');
   const [sellAmount, setSellAmount] = useState('');
-  const currentPrice = 1000;
+  const currentPrice = 7500;
 
   const handleBuy = () => {
     const amount = parseFloat(buyAmount);

@@ -82,7 +82,7 @@ const Wallet = ({ balance, klabAmount, setBalance, setKlabAmount, addTransaction
             <p className="text-4xl font-bold text-primary mb-2">{klabAmount}</p>
           )}
           <p className="text-sm text-muted-foreground">
-            ≈ ${(klabAmount * 1000).toLocaleString()} USD
+            ≈ ${(klabAmount * 7500).toLocaleString()} USD
           </p>
         </Card>
 
