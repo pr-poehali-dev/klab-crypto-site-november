@@ -12,6 +12,8 @@ const Index = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [balance, setBalance] = useState(1000);
   const [klabAmount, setKlabAmount] = useState(500);
+  const [userLevel, setUserLevel] = useState(4);
+  const [totalTrades, setTotalTrades] = useState(0);
   const [transactions, setTransactions] = useState<any[]>([
     { id: 1, type: 'buy', amount: 100, price: 2.5, date: '2025-12-07 14:30' },
     { id: 2, type: 'receive', amount: 50, from: '0xABC...123', date: '2025-12-06 10:15' },
@@ -31,6 +33,16 @@ const Index = () => {
 
   const addTransaction = (transaction: any) => {
     setTransactions([{ ...transaction, id: Date.now(), date: new Date().toLocaleString('ru-RU') }, ...transactions]);
+    
+    if (transaction.type === 'buy' || transaction.type === 'sell') {
+      const newTotalTrades = totalTrades + 1;
+      setTotalTrades(newTotalTrades);
+      
+      const newLevel = Math.floor(newTotalTrades / 5) + 4;
+      if (newLevel > userLevel && newLevel <= 10) {
+        setUserLevel(newLevel);
+      }
+    }
   };
 
   if (!isAuthenticated) {
@@ -65,7 +77,7 @@ const Index = () => {
             addTransaction={addTransaction}
           />
         )}
-        {currentPage === 'profile' && <Profile transactions={transactions} />}
+        {currentPage === 'profile' && <Profile transactions={transactions} userLevel={userLevel} totalTrades={totalTrades} />}
         {currentPage === 'support' && <Support />}
       </main>
     </div>
